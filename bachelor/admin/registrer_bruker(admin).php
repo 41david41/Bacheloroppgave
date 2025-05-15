@@ -39,7 +39,7 @@ if (isset($_GET['brukernavn']) && !isset($_GET['feil'])) {
 }
 
 $feilmelding = $_GET['feil'] ?? '';
-$profilbildePath = "/test12/tu/BILDER/profilbilder/" . htmlspecialchars($brukerdata['user']) . ".png";
+$profilbildePath = "/Bacheloroppgave/bachelor/BILDER/profilbilder/" . htmlspecialchars($brukerdata['user']) . ".png";
 $profilbildePathWithCacheBuster = $profilbildePath . '?v=' . time();
 ?>
 <!DOCTYPE html>

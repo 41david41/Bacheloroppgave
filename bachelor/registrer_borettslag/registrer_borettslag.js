@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
           // Justér URL-stien korrekt (konverter relativ til absolutt)
           let src = data.bilde;
           if (src.startsWith("..")) {
-            src = src.replace("..", "/test12/tu");
+            src = src.replace("..", "/Bacheloroppgave/bachelor");
           }
 
           img.src = src;
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const link = document.createElement("a");
           let href = data.pdf;
           if (href.startsWith("..")) {
-            href = href.replace("..", "/test12/tu");
+            href = href.replace("..", "/Bacheloroppgave/bachelor");
           }
           link.href = href;
           link.target = "_blank";

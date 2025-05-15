@@ -3,8 +3,8 @@
 include("profile_backend.php");
 
 // Full fysisk sti til profilbildet
-$absoluteFolderPath = "/Applications/XAMPP/xamppfiles/htdocs/test12/tu/BILDER/profilbilder/";
-$webPath = "/test12/tu/BILDER/profilbilder/";
+$absoluteFolderPath = "/Applications/XAMPP/xamppfiles/htdocs/Bacheloroppgave/bachelor/BILDER/profilbilder/";
+$webPath = "/Bacheloroppgave/bachelor/BILDER/profilbilder/";
 
 $profileImageFile = $absoluteFolderPath . $username . ".png";
 $defaultImageFile = $absoluteFolderPath . "default.png";
