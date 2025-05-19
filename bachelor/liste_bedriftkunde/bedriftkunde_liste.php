@@ -37,17 +37,16 @@
 
     <!-- Handlingsknapper -->
     <div class="button-container">
-        <!-- Ny kunde -->
-        <a href="#" onclick="redirectToPage('registrer_bedriftkunde/registrer_bedriftkundehtml.php')">
-            <button class="secondaryBTN" id="nyKundeBtn">
-                <span class="material-icons pil">add</span>
-            </button>
-        </a>
-
-        <!-- Eksport til CSV -->
-        <button id="exportBtn" onclick="exportToCSV()" class="secondaryBTN">
+          <!-- Eksport til CSV -->
+        <button onclick="exportToCSV()" class="secondaryBTN">
             <span class="material-icons pil">download</span> CSV
         </button>    
+        <!-- Ny kunde -->
+        <a href="#" onclick="redirectToPage('registrer_bedriftkunde/registrer_bedriftkundehtml.php')">
+            <button class="primaryBTN" id="nyKundeBtn">
+                <span class="material-icons pil">add</span> Ny kunde
+            </button>
+        </a>
     </div>
 </div>
 
@@ -55,10 +54,10 @@
 <div class="sticky-header">
     <div class="visning-sok-wrapper">    
         <!-- Søkeinput -->
-        <div class="search-container">
+        <div class="button-container">
             <input type="text" id="sokefelt" placeholder="Søk..." oninput="filtrerKunder()"> 
             <button class="secondaryBTN" id="filter">
-                <span class="material-icons pil">filter_alt</span>            
+                <span class="material-icons pil">filter_alt</span> Filter           
             </button>
         </div>    
 

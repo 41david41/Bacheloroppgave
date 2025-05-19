@@ -16,7 +16,6 @@ require_once("../landingpage/antall_kunder.php");
 
   <!-- Egne stilark -->
   <link rel="stylesheet" href="../css/landingpage.css">
-  <link rel="stylesheet" href="../css/header.css">
 
   <!-- JavaScript -->
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
@@ -49,8 +48,8 @@ require_once("../landingpage/antall_kunder.php");
     <h1 class="text-3xl">KUNDEGRUPPER</h1>
     <div class="button-container">
       <a href="#" onclick="redirectToPage('registrer_borettslag/registrer_borettslaghtml.php')">
-        <button class="secondaryBTN">
-          <span class="material-icons pil">add</span>
+        <button class="primaryBTN">
+          <span class="material-icons pil">add</span> Ny kunde
         </button>
       </a>
     </div>

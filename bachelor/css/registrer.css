@@ -1,5 +1,5 @@
 /* ========================== 
-   Basislayout 
+   1. Basislayout 
    ========================== */
 
    body {
@@ -11,7 +11,7 @@
   } 
   
   /* =========================
-     Hovedstruktur og layout
+     2. Hovedstruktur og layout
      ========================= */
   
   form#bedriftForm {
@@ -73,7 +73,7 @@
   }
   
   /* =========================
-     Inputfelt og tekstområder
+     3. Inputfelt og tekstområder
      ========================= */
   
   input,
@@ -108,10 +108,11 @@
   }
   
   /* =========================
-     Knappestiler
+     4. Knappestiler
      ========================= */
   
   .secondaryBTN {
+    display: flex;
     vertical-align: middle;
     padding: 8px 12px;
     border: 2px solid white;
@@ -164,7 +165,7 @@
   }
   
   /* =========================
-     Ikoner og dropdowns
+     5. Ikoner og dropdowns
      ========================= */
   
   .pil {
@@ -224,7 +225,7 @@
   }
   
   /* =========================
-     Forhåndsvisning av bilde
+     6. Forhåndsvisning av bilde
      ========================= */
   
   .preview {
@@ -260,4 +261,16 @@
     font-size: 14px;
     cursor: pointer;
   }
+
+  .bilde-container {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+  }
+       
+  .profilbilde-visning {
+    display: none;
+    max-width: 150px;
+    border-radius: 8px;
+  }
+
   

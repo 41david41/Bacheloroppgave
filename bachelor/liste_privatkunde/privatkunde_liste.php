@@ -34,28 +34,27 @@
         </div>
     </div>
 
-    <div class="button-container">       
-        <!-- Registrer ny kunde -->
-        <a href="#" onclick="redirectToPage('registrer_privatkunde/registrer_privatkundehtml.php')">
-            <button class="secondaryBTN" id="nyKundeBtn">
-                <span class="material-icons pil">add</span>
-            </button>
-        </a>
-
+    <div class="button-container">
         <!-- Eksportknapp -->
         <button id="exportBtn" onclick="exportToCSV()" class="secondaryBTN">
             <span class="material-icons pil">download</span> CSV
-        </button>
+        </button>       
+        <!-- Registrer ny kunde -->
+        <a href="#" onclick="redirectToPage('registrer_privatkunde/registrer_privatkundehtml.php')">
+            <button class="primaryBTN" id="nyKundeBtn">
+              <span class="material-icons pil">add</span> Ny kunde
+            </button>
+        </a>
     </div>
 </div>
 
 <!-- Søke- og visningsalternativer -->
 <div class="sticky-header">
     <div class="visning-sok-wrapper">    
-        <div class="search-container">
+        <div class="button-container">
             <input type="text" id="sokefelt" placeholder="Søk..." oninput="filtrerKunder()"> 
             <button class="secondaryBTN" id="filter">
-                <span class="material-icons pil">filter_alt</span>            
+                <span class="material-icons pil">filter_alt</span> Filter            
             </button>
         </div>    
 

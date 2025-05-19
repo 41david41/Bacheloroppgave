@@ -35,27 +35,26 @@
   </div>
 
   <div class="button-container">
+      <!-- Eksport til CSV -->
+      <button onclick="exportToCSV()" class="secondaryBTN">
+        <span class="material-icons pil">download</span> CSV
+      </button>    
     <!-- Registrer nytt borettslag -->
     <a href="#" onclick="redirectToPage('registrer_borettslag/registrer_borettslaghtml.php')">
-      <button class="secondaryBTN" id="nyKundeBtn">
-        <span class="material-icons pil">add</span>
+      <button class="primaryBTN" id="nyKundeBtn">
+        <span class="material-icons pil">add</span> Ny kunde
       </button>
     </a>
-
-    <!-- Eksportknapp -->
-    <button id="exportBtn" onclick="exportToCSV()" class="secondaryBTN">
-      <span class="material-icons pil">download</span> CSV
-    </button>    
   </div>
 </div>
 
 <!-- Søke- og visningskontroller -->
 <div class="sticky-header">
   <div class="visning-sok-wrapper">    
-    <div class="search-container">
+    <div class="button-container">
       <input type="text" id="sokefelt" placeholder="Søk..." oninput="filtrerKunder()"> 
       <button class="secondaryBTN" id="filter">
-        <span class="material-icons pil">filter_alt</span>            
+        <span class="material-icons pil">filter_alt</span> Filter            
       </button>
     </div>    
 
