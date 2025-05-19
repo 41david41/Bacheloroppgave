@@ -20,21 +20,6 @@ require_once("../landingpage/antall_kunder.php");
   <!-- JavaScript -->
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <script src="../redirectToPage.js"></script>
-
-  <style>
-    .image-placeholder {
-      width: 100%;
-      height: 150px;
-      overflow: hidden;
-    }
-
-    .image-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
-
 </head>
 
 <body>
