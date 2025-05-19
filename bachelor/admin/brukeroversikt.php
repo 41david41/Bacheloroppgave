@@ -29,8 +29,8 @@ include("brukeroversikt_backend.php"); // Henter brukerliste og $isAdmin
     <h1 class="text-3xl font-light headline-left">BRUKEROVERSIKT</h1>
     <div class="button-container">
         <a href="#" onclick="redirectToPage('admin/registrer_bruker(admin).php')">
-            <button class="secondaryBTN">
-                <span class="material-icons pil">add</span>
+            <button class="primaryBTN">
+                <span class="material-icons pil">add</span> Ny bruker
             </button>
         </a>
     </div>

@@ -1,6 +1,5 @@
 <?php
 include("../db2.php"); // Tilkobling til MySQL-databasen
-session_start();
 
 // Sjekk om brukeren er admin
 $username = $_SESSION['db_username'] ?? '';
