@@ -48,20 +48,34 @@
 
       <!-- Venstre kolonne: kontaktdata -->
       <div class="form-left">
-        <div class="form-group"><input name="fornavn" type="text" placeholder="Fornavn" required></div>
-        <div class="form-group"><input name="etternavn" type="text" placeholder="Etternavn" required></div>
-        <div class="form-group"><input name="epost" type="text" placeholder="E-post" required></div>
-        <div class="form-group"><input name="telefon" type="text" placeholder="Telefonnummer" pattern="^[0-9]{8}$" required></div>
+        <div class="form-group"><input name="fornavn" type="text" placeholder="Fornavn">
+          <div class="error-msg" id="fornavnError"></div>
+        </div>
+        <div class="form-group"><input name="etternavn" type="text" placeholder="Etternavn">
+          <div class="error-msg" id="etternavnError"></div>
+        </div>
+        <div class="form-group"><input name="epost" type="text" placeholder="E-post">
+          <div class="error-msg" id="epostError"></div>
+        </div>
+        <div class="form-group"><input name="telefon" type="text" placeholder="Telefonnummer" pattern="^[0-9]{8}$">
+          <div class="error-msg" id="telefonError"></div>
+        </div>
         <div class="form-group"><input class="invisble" type="text"></div>
       </div>
 
       <!-- Midtkolonne: adresseinfo -->
       <div class="form-middel">
-        <div class="form-group"><input name="adresse1" type="text" placeholder="Adresse 1" required></div>
+        <div class="form-group"><input name="adresse1" type="text" placeholder="Adresse 1">
+          <div class="error-msg" id="adresse1Error"></div>
+        </div>
         <div class="form-group"><input name="adresse2" type="text" placeholder="Adresse 2"></div>
         <div class="split-input">
-          <div class="form-group half-width"><input name="postnr" type="text" placeholder="PostNr." pattern="^[0-9]{4}$" required></div>
-          <div class="form-group half-width"><input name="sted" type="text" placeholder="Sted" required></div>
+          <div class="form-group half-width"><input name="postnr" type="text" placeholder="PostNr." pattern="^[0-9]{4}$">
+            <div class="error-msg" id="postnrError"></div>
+          </div>
+          <div class="form-group half-width"><input name="sted" type="text" placeholder="Sted">
+            <div class="error-msg" id="stedError"></div>
+          </div>
         </div>
         <div class="form-group"><input class="invisble" type="text"></div>
         <div class="form-group"><input class="invisble" type="text"></div>
@@ -99,8 +113,9 @@
 </form>
 
 <!-- Eksterne skript for forhåndsvisning og JS-logikk -->
-<script src="../preview.js"></script>
+<script src="validering_privatkunde.js"></script>
 <script src="registrer_privatkunde.js"></script>
+<script src="../preview.js"></script>
 
 </body>
 </html>

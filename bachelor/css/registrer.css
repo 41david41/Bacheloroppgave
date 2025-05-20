@@ -106,6 +106,12 @@
   .checkbox-admin input {
     height: 40px;
   }
+
+  .error-msg {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 4px;
+  }  
   
   /* =========================
      4. Knappestiler

@@ -48,23 +48,43 @@
 
       <!-- Venstre kolonne: Organisasjons- og adresseinfo -->
       <div class="form-left">
-        <div class="form-group"><input name="orgnr" type="text" placeholder="Organisasjonsnummer" pattern="^[0-9]{9}$" required></div>
-        <div class="form-group"><input name="navn" type="text" placeholder="Navn på borettslag" required></div>
-        <div class="form-group"><input name="styreleder" type="text" placeholder="Styreleder" required></div>
-        <div class="form-group"><input name="adresse1" type="text" placeholder="Adresse 1" required></div>
+        <div class="form-group"><input name="orgnr" id="orgnr" type="text" placeholder="Organisasjonsnummer" pattern="^[0-9]{9}$">
+          <div class="error-msg" id="orgnrError"></div>
+        </div>
+        <div class="form-group"><input name="navn" type="text" placeholder="Navn på borettslag">
+          <div class="error-msg" id="navnError"></div>
+        </div>
+        <div class="form-group"><input name="styreleder" type="text" placeholder="Styreleder">
+          <div class="error-msg" id="styrelederError"></div>
+        </div>
+        <div class="form-group"><input name="adresse1" type="text" placeholder="Adresse 1">
+          <div class="error-msg" id="adresse1Error"></div>
+        </div>
         <div class="form-group"><input name="adresse2" type="text" placeholder="Adresse 2"></div>
       </div>
 
       <!-- Midtkolonne: kontakt- og stedinfo -->
       <div class="form-middel">
         <div class="split-input">
-          <div class="form-group half-width"><input name="postnr" type="text" placeholder="PostNr." pattern="^[0-9]{4}$" required></div>
-          <div class="form-group half-width"><input name="sted" type="text" placeholder="Sted" required></div>
+          <div class="form-group half-width"><input name="postnr" type="text" placeholder="PostNr." pattern="^[0-9]{4}$">
+            <div class="error-msg" id="postnrError"></div>
+          </div>
+          <div class="form-group half-width"><input name="sted" type="text" placeholder="Sted">
+            <div class="error-msg" id="stedError"></div>
+          </div>
         </div>
-        <div class="form-group"><input name="epost" type="text" placeholder="E-post" required></div>
-        <div class="form-group"><input name="telefon" type="text" placeholder="Telefonnummer" pattern="^[0-9]{8}$" required></div>
-        <div class="form-group"><input name="kontaktperson" type="text" placeholder="Kontaktperson" required></div>
-        <div class="form-group"><input name="kontaktpersonTlf" type="text" placeholder="Kontaktperson telefonnummer" pattern="^[0-9]{8}$" required></div>
+        <div class="form-group"><input name="epost" type="text" placeholder="E-post">
+          <div class="error-msg" id="epostError"></div>
+        </div>
+        <div class="form-group"><input name="telefon" type="text" placeholder="Telefonnummer" pattern="^[0-9]{8}$">
+          <div class="error-msg" id="telefonError"></div>
+        </div>
+        <div class="form-group"><input name="kontaktperson" type="text" placeholder="Kontaktperson">
+          <div class="error-msg" id="kontaktpersonError"></div>
+        </div>
+        <div class="form-group"><input name="kontaktpersonTlf" type="text" placeholder="Kontaktperson telefonnummer" pattern="^[0-9]{8}$">
+          <div class="error-msg" id="kontaktpersonTlfError"></div>
+        </div>
       </div>
 
       <!-- Høyrekolonne: kommentar og filopplasting -->
@@ -99,6 +119,7 @@
 </form>
 
 <!-- Eksterne scripts -->
+<script src="validering_borettslag.js" defer></script>
 <script src="registrer_borettslag.js"></script>
 <script src="../preview.js"></script>
 </body>

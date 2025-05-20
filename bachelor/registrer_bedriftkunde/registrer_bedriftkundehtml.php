@@ -1,37 +1,33 @@
-<?php
-require_once("../db.php");
-
-$id = $_GET['id'] ?? null;
-$bedrift = null;
-
-if ($id) {
-    $stmt = $pdo->prepare("SELECT * FROM bedriftskunde WHERE id = ?");
-    $stmt->execute([$id]);
-    $bedrift = $stmt->fetch(PDO::FETCH_ASSOC);
-}
-?>
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>registrer_bedriftskunde</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="../css/registrer.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-  <script src="../redirectToPage.js"></script>
+    <!-- Tittel som vises i nettleserfanen -->
+    <title>registrer_bedriftskunde</title>
+   
+    <!-- Stilark og fonter -->
+    <link rel="stylesheet" href="../css/registrer.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- Eksterne .js -->
+    <script src="../redirectToPage.js"></script>
 </head>
 
 <body>
+<!-- Inkluderer toppnavigasjon -->
 <div id="header">
-  <?php include("../header/header.php"); ?>
+    <?php include("../header/header.php"); ?>
 </div>
 
+<!-- Toppseksjon med tilbakeknapp og kundegruppevelger -->
 <div class="headline-container">
-  <button class="secondaryBTN" onclick="redirectToPage('liste_bedriftkunde/bedriftkunde_liste.php')">
+  <button class="secondaryBTN" id="go_back" onclick="redirectToPage('liste_bedriftkunde/bedriftkunde_liste.php')">
     <span class="material-icons pil">arrow_back</span>
   </button>
   <div class="dropdown">
@@ -45,31 +41,53 @@ if ($id) {
   </div>
 </div>
 
-<form method="POST" enctype="multipart/form-data" id="bedriftForm" action="<?= $id ? "../liste_bedriftkunde/oppdater_bedriftkunde.php?id=$id" : "registrer_bedriftkunde.php" ?>">
+<!-- Skjema for registrering eller redigering av bedriftskunde -->
+<form method="POST" enctype="multipart/form-data" id="bedriftForm">
   <div class="container">
     <div class="form-container">
+
+      <!-- Venstre kolonne med adresseinformasjon -->
       <div class="form-left">
-        <div class="form-group"><input name="orgnr" type="text" placeholder="Organisasjonsnummer" pattern="^[0-9]{9}$" required value="<?= htmlspecialchars($bedrift['orgnr'] ?? '') ?>"></div>
-        <div class="form-group"><input name="bedriftsnavn" type="text" placeholder="Bedriftsnavn" required value="<?= htmlspecialchars($bedrift['bedriftsnavn'] ?? '') ?>"></div>
-        <div class="form-group"><input name="adresse1" type="text" placeholder="Adresse 1" required value="<?= htmlspecialchars($bedrift['adresse1'] ?? '') ?>"></div>
-        <div class="form-group"><input name="adresse2" type="text" placeholder="Adresse 2" value="<?= htmlspecialchars($bedrift['adresse2'] ?? '') ?>"></div>
+        <div class="form-group"><input name="orgnr" id="orgnr" type="text" placeholder="Organisasjonsnummer" pattern="^[0-9]{9}$">
+          <div class="error-msg" id="orgnrError"></div>
+        </div>
+        <div class="form-group"><input name="bedriftsnavn" type="text" name="bedriftsnavn" placeholder="Bedriftsnavn">
+          <div class="error-msg" id="bedriftsnavnError"></div>
+        </div>
+        <div class="form-group"><input name="adresse1" type="text" placeholder="Adresse 1">
+          <div class="error-msg" id="adresse1Error"></div>
+        </div>
+        <div class="form-group"><input name="adresse2" type="text" name="adresse2" placeholder="Adresse 2"></div>
         <div class="form-group"><input class="invisble" type="text"></div>
       </div>
 
+      <!-- Midtkolonne med kontaktinfo -->
       <div class="form-middel">
         <div class="split-input">
-          <div class="form-group half-width"><input name="postnr" type="text" placeholder="PostNr." pattern="^[0-9]{4}$" required value="<?= htmlspecialchars($bedrift['postnr'] ?? '') ?>"></div>
-          <div class="form-group half-width"><input name="sted" type="text" placeholder="Sted" required value="<?= htmlspecialchars($bedrift['sted'] ?? '') ?>"></div>
+          <div class="form-group half-width"><input name="postnr" type="text" placeholder="PostNr." pattern="^[0-9]{4}$">
+            <div class="error-msg" id="postnrError"></div>
+          </div>
+          <div class="form-group half-width"><input name="sted" type="text" placeholder="Sted">
+            <div class="error-msg" id="stedError"></div>
+          </div>
         </div>
-        <div class="form-group"><input name="epost" type="email" placeholder="E-post" required value="<?= htmlspecialchars($bedrift['epost'] ?? '') ?>"></div>
-        <div class="form-group"><input name="kontaktperson" type="text" placeholder="Kontaktperson" required value="<?= htmlspecialchars($bedrift['kontaktperson'] ?? '') ?>"></div>
-        <div class="form-group"><input name="kontaktpersonTlf" type="text" placeholder="Kontaktperson telefonnummer" pattern="^[0-9]{8}$" required value="<?= htmlspecialchars($bedrift['kontaktpersonTlf'] ?? '') ?>"></div>
+        <div class="form-group"><input name="epost" type="text" placeholder="E-post">
+          <div class="error-msg" id="epostError"></div>
+        </div>
+        <div class="form-group"><input name="kontaktperson" type="text" placeholder="Kontaktperson">
+          <div class="error-msg" id="kontaktpersonError"></div>
+        </div>
+        <div class="form-group"><input name="kontaktpersonTlf" type="text" placeholder="Kontaktperson telefonnummer" pattern="^[0-9]{8}$">
+          <div class="error-msg" id="kontaktpersonTlfError"></div>
+        </div>
         <div class="form-group"><input class="invisble" type="text"></div>
       </div>
 
+      <!-- Høyrekolonne med kommentar og filopplasting -->
       <div class="form-right">
-        <div class="form-group"><textarea name="kommentar" placeholder="Kommentar"><?= htmlspecialchars($bedrift['kommentar'] ?? '') ?></textarea></div>
+        <div class="form-group"><textarea name="kommentar" placeholder="Kommentar"></textarea></div>
 
+        <!-- Opplasting av bilde og PDF -->
         <div class="button-container">
           <input type="file" name="bilde" id="imageUpload" accept="image/*" hidden>
           <button id="bilde" class="fileinput" type="button" onclick="document.getElementById('imageUpload').click();">
@@ -82,29 +100,23 @@ if ($id) {
           </button>
         </div>
 
+        <!-- Lagre-knapp -->
         <div class="button-container">
-          <button type="submit" class="primaryBTN"><?= $id ? "Oppdater" : "Registrer" ?></button>
+          <button type="submit" class="primaryBTN">Registrer</button>
         </div>
       </div>
-    </div>
 
-    <!-- Forhåndsvisningseksjon (bilder og PDF) flyttet under -->
-    <div class="preview-wrapper" style="margin-top: 20px;">
-      <div id="bildePreview" class="preview-container">
-        <?php if (!empty($bedrift['bilde'])): ?>
-          <img src="<?= htmlspecialchars($bedrift['bilde']) ?>" alt="Profilbilde" style="max-width: 200px;">
-        <?php endif; ?>
-      </div>
-
-      <div id="pdfPreview" class="preview-container">
-        <?php if (!empty($bedrift['pdf'])): ?>
-          <a href="<?= htmlspecialchars($bedrift['pdf']) ?>" target="_blank">📄 Se eksisterende PDF</a>
-        <?php endif; ?>
-      </div>
     </div>
   </div>
+
+  <!-- Forhåndsvisning av opplastet bilde og PDF -->
+  <div id="bildePreview" class="preview-container"></div>
+  <div id="pdfPreview" class="preview-container"></div>
 </form>
 
+<!-- Eksterne scripts -->
+<script src="validering_bedriftkunde.js"></script>
 <script src="registrer_bedriftkunde.js"></script>
+<script src="../preview.js"></script>
 </body>
 </html>
