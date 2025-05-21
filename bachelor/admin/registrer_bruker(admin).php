@@ -1,6 +1,5 @@
 <?php
 include("../db2.php");
-session_start();
 
 $erRedigering = false;
 $innloggetBruker = $_SESSION['db_username'] ?? '';
@@ -63,7 +62,7 @@ $profilbildePathWithCacheBuster = $profilbildePath . '?v=' . time();
 <div id="header"><?php include("../header/header.php"); ?></div>
 
 <div class="headline-container">
-    <button class="secondaryBTN" onclick="redirectToPage('landingpage/landingpage.php')">
+    <button class="secondaryBTN" onclick="redirectToPage('admin/brukeroversikt.php')">
         <span class="material-icons pil">arrow_back</span>
     </button>
     <h1 class="text-3xl font-light"><?php echo $erRedigering ? "OPPDATER BRUKER" : "NY BRUKER"; ?></h1>
