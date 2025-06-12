@@ -40,7 +40,8 @@ $imgSrc = file_exists($profileImageFile) ? $webPath . $username . ".png" : $webP
 <div class="profil-container">
     <div class="profil-card">
         <div class="profil-image">
-            <img src="<?php echo htmlspecialchars($imgSrc); ?>" alt="Profilbilde" class="profil-img">
+            <!--<img src="<?php echo htmlspecialchars($imgSrc); ?>" alt="Profilbilde" class="profil-img">-->
+            <img src="../BILDER/profilbilder/alex.png" alt="Profilbilde" class="profil-img">
         </div>
         <div class="profil-info">
             <p>Brukernavn: <?php echo htmlspecialchars($username); ?></p>
