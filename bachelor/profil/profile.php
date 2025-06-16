@@ -47,6 +47,8 @@ $imgSrc = file_exists($profileImageFile) ? $webPath . $username . ".png" : $webP
             <p>Brukernavn: <?php echo htmlspecialchars($username); ?></p>
             <p>E-post: <?php echo htmlspecialchars($epost); ?></p>
             <p>Rolle: <?php echo htmlspecialchars($rolle); ?></p>
+            <br>
+            <div class="profil-button"><a href="change_password.php"><button class="secondaryBTN">Endre passord</button></a></div>
         </div>
     </div>
 </div>

@@ -82,7 +82,7 @@ $profilbildePathWithCacheBuster = $profilbildePath . '?v=' . time();
             <!-- Venstre kolonne -->
             <div class="form-group-admin">
                 <div class="form-group">
-                    <input type="text" name="brukernavn" value="<?php echo htmlspecialchars($brukerdata['user']); ?>" placeholder="Fyll inn brukernavn" required>
+                    <input type="email" name="brukernavn" value="<?php echo htmlspecialchars($brukerdata['user']); ?>" placeholder="Fyll inn brukernavn" required>
                 </div>
                 <div class="form-group">
                     <input type="text" name="fornavn" value="<?php echo htmlspecialchars($brukerdata['fornavn']); ?>" placeholder="Fornavn" required>
@@ -167,6 +167,8 @@ document.getElementById('imageUpload').addEventListener('change', function(event
     }
 });
 </script>
+
+<script src="validering_nybruker.js"></script>
 
 </body>
 </html>

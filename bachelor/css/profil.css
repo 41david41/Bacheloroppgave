@@ -37,12 +37,14 @@
        =============================== */
     
     .profil-image {
+      display: flex;
+      justify-content: center;
       margin-bottom: 20px;
     }
     
     .profil-img {
-      width: 100px;
-      height: 100px;
+      width: 200px;
+      height: 200px;
       border: 3px solid #235f9f;
       border-radius: 50%;
       object-fit: cover;

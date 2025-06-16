@@ -33,7 +33,7 @@ require_once("../landingpage/antall_kunder.php");
     <h1 class="text-3xl">KUNDEGRUPPER</h1>
     <div class="button-container">
       <a href="#" onclick="redirectToPage('registrer_borettslag/registrer_borettslaghtml.php')">
-        <button class="primaryBTN">
+        <button class="secondaryBTN">
           <span class="material-icons pil">add</span> Ny kunde
         </button>
       </a>
