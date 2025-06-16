@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     const felter = [
       { name: "brukernavn", 
-        regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 
+        
         requiredMsg: "Fyll inn brukernavn",
         patternMsg: "Ugyldig e-postadresse" },
         

@@ -1,16 +1,5 @@
 <?php
-// Hent backendlogikk
 include("profile_backend.php");
-
-// Full fysisk sti til profilbildet
-$absoluteFolderPath = "/Applications/XAMPP/xamppfiles/htdocs/Bacheloroppgave/bachelor/BILDER/profilbilder/";
-$webPath = "/Bacheloroppgave/bachelor/BILDER/profilbilder/";
-
-$profileImageFile = $absoluteFolderPath . $username . ".png";
-$defaultImageFile = $absoluteFolderPath . "default.png";
-
-// Velg bilde som finnes
-$imgSrc = file_exists($profileImageFile) ? $webPath . $username . ".png" : $webPath . "default.png";
 ?>
 
 <!DOCTYPE html>
@@ -39,13 +28,11 @@ $imgSrc = file_exists($profileImageFile) ? $webPath . $username . ".png" : $webP
 <!-- Profilkort -->
 <div class="profil-container">
     <div class="profil-card">
-        <div class="profil-image">
-            <!--<img src="<?php echo htmlspecialchars($imgSrc); ?>" alt="Profilbilde" class="profil-img">-->
-            <img src="../BILDER/profilbilder/alex.png" alt="Profilbilde" class="profil-img">
-        </div>
         <div class="profil-info">
             <p>Brukernavn: <?php echo htmlspecialchars($username); ?></p>
+            <br>
             <p>E-post: <?php echo htmlspecialchars($epost); ?></p>
+            <br>
             <p>Rolle: <?php echo htmlspecialchars($rolle); ?></p>
             <br>
             <div class="profil-button"><a href="change_password.php"><button class="secondaryBTN">Endre passord</button></a></div>

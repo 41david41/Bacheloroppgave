@@ -82,7 +82,7 @@ $profilbildePathWithCacheBuster = $profilbildePath . '?v=' . time();
             <!-- Venstre kolonne -->
             <div class="form-group-admin">
                 <div class="form-group">
-                    <input type="email" name="brukernavn" value="<?php echo htmlspecialchars($brukerdata['user']); ?>" placeholder="Fyll inn brukernavn" required>
+                    <input type="text" name="brukernavn" value="<?php echo htmlspecialchars($brukerdata['user']); ?>" placeholder="Fyll inn brukernavn" required>
                 </div>
                 <div class="form-group">
                     <input type="text" name="fornavn" value="<?php echo htmlspecialchars($brukerdata['fornavn']); ?>" placeholder="Fornavn" required>
@@ -129,10 +129,7 @@ $profilbildePathWithCacheBuster = $profilbildePath . '?v=' . time();
                     <button class="fileinput" type="reset">
                         <span class="material-icons pil">undo</span> Nullstill
                     </button>
-                    <button class="fileinput" id="profilbilde" type="button"
-                            onclick="document.getElementById('imageUpload').click();">
-                        <span class="material-icons pil">account_circle</span> Profilbilde
-                    </button>
+                    
                     <button class="primaryBTN" type="submit">
                         <?php echo $erRedigering ? 'Lagre endringer' : 'Registrer'; ?>
                     </button>

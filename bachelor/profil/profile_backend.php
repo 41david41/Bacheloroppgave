@@ -52,4 +52,10 @@ try {
 } catch (PDOException $e) {
     error_log("❌ Feil ved henting av e-post: " . $e->getMessage());
 }
+
+$_SESSION["brukernavn"] = $username;
+$_SESSION["epost"] = $epost;
+$_SESSION["rolle"] = $rolle;
+
 ?>
+
